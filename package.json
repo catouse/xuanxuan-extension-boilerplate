@@ -1,0 +1,19 @@
+{
+  "name": "xuanxuan-extension-boilerplate",
+  "version": "1.0.0",
+  "description": "[喧喧](https://github.com/easysoft/xuanxuan)扩展开发模版。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catouse/xuanxuan-extension-boilerplate.git"
+  },
+  "author": "Catouse",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/catouse/xuanxuan-extension-boilerplate/issues"
+  },
+  "homepage": "https://github.com/catouse/xuanxuan-extension-boilerplate#readme"
+}
