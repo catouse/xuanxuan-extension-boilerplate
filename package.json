@@ -4,16 +4,42 @@
   "description": "[喧喧](https://github.com/easysoft/xuanxuan)扩展开发模版。",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack --env.development --watch --colors",
+    "dist": "webpack --env.production --colors",
+    "package": "node ./package.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/catouse/xuanxuan-extension-boilerplate.git"
+    "url": "https://github.com/catouse/xuanxuan-extension-boilerplate.git"
   },
   "author": "Catouse",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/catouse/xuanxuan-extension-boilerplate/issues"
   },
-  "homepage": "https://github.com/catouse/xuanxuan-extension-boilerplate#readme"
+  "homepage": "https://github.com/catouse/xuanxuan-extension-boilerplate#readme",
+  "devDependencies": {
+    "archiver": "^3.0.0",
+    "cpx": "^1.5.0",
+    "css-loader": "^2.1.0",
+    "eslint": "^5.12.0",
+    "eslint-config-alloy": "^1.4.2",
+    "eslint-plugin-react": "^7.12.3",
+    "eslint-plugin-typescript": "^0.14.0",
+    "fs-extra": "^7.0.1",
+    "less-loader": "^4.1.0",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^5.3.2",
+    "typescript": "^3.2.2",
+    "typescript-eslint-parser": "^21.0.2",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.1"
+  },
+  "dependencies": {
+    "@types/react-dom": "^16.0.11",
+    "@types/node": "^10.12.18",
+    "@types/react": "^16.7.20"
+  }
 }

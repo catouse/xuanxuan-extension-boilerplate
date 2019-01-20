@@ -1,0 +1,20 @@
+{
+    "name": "xuanxuan-extension-name",
+    "version": "1.0.0",
+    "description": "喧喧扩展。",
+    "main": "index.js",
+    "xext": {
+        "type": "plugin",
+        "hot": true
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/catouse/xuanxuan-extension-boilerplate.git"
+    },
+    "author": "Catouse",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/catouse/xuanxuan-extension-boilerplate/issues"
+    },
+    "homepage": "https://github.com/catouse/xuanxuan-extension-boilerplate#readme"
+}

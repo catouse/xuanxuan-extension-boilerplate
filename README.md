@@ -6,19 +6,39 @@
 
 通过 `git` 克隆项目到本地：
 
-```bash
+```shell
 git clone --depth 1 --single-branch --branch master https://github.com/catouse/xuanxuan-extension-boilerplate.git xuanxuan-your-extension-name
 ```
 
 然后进入项目目录并安装依赖模块：
 
-```bash
+```shell
 cd xuanxuan-your-extension-name
 npm install
 ```
 
+## 配置
+
+修改扩展配置文件 `src/package.json`。
+
+## 开发
+
+### 启动开发模式
+
+```shell
+npm run dev
+```
+
+### 编译
+
+```shell
+npm run dist
+```
+
 ## 打包
 
-```bash
+```shell
 npm run package
 ```
+
+最终扩展包在 `release/` 目录下。
