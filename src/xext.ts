@@ -188,7 +188,7 @@ export interface ExtensionData {
     /**
      * 当扩展类型为应用（app）且 appType 为 'insideView' 时作为内嵌应用的 React 实现的界面主组件。MainView 应该返回一个 React 组件类或组件函数。
      */
-    MainView?: React.Component;
+    MainView?: React.Component | Function;
 
     /**
      * 用于配置替换系统内置界面组件。replaceViews 为一个对象，对象的键名为要替换的组件路径，键值为要用来替换的 React 组件类或组件函数。

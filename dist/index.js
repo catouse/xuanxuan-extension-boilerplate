@@ -87,6 +87,25 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/app.tsx":
+/*!*********************!*\
+  !*** ./src/app.tsx ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var xext_1 = __webpack_require__(/*! ./xext */ "./src/xext.ts");
+exports["default"] = (function (props) {
+    var app = props.app;
+    return xext_1.React.createElement("div", { className: "red box" }, app.name);
+});
+
+
+/***/ }),
+
 /***/ "./src/index.ts":
 /*!**********************!*\
   !*** ./src/index.ts ***!
@@ -98,12 +117,14 @@ module.exports =
 
 exports.__esModule = true;
 var xext_1 = __webpack_require__(/*! ./xext */ "./src/xext.ts");
+var app_1 = __webpack_require__(/*! ./app */ "./src/app.tsx");
 var extension = {
     onAttach: function (ext) {
         if (xext_1.DEBUG) {
             console.log("Extension '" + ext.displayName + "' loaded from " + ext.mainFile + ".");
         }
     },
+    MainView: app_1["default"]
 };
 exports["default"] = extension;
 

@@ -4,8 +4,9 @@
     "description": "喧喧扩展。",
     "main": "index.js",
     "xext": {
-        "type": "plugin",
-        "hot": true
+        "type": "app",
+        "hot": true,
+        "appType": "insideView"
     },
     "repository": {
         "type": "git",

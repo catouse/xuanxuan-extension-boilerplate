@@ -1,4 +1,5 @@
-import xext, {ExtensionData, DEBUG} from "./xext";
+import {ExtensionData, DEBUG} from "./xext";
+import AppView from './app';
 
 const extension: ExtensionData = {
     onAttach(ext: Xuanxuan.Extension) {
@@ -6,6 +7,7 @@ const extension: ExtensionData = {
             console.log(`Extension '${ext.displayName}' loaded from ${ext.mainFile}.`);
         }
     },
+    MainView: AppView
 };
 
 export default extension;

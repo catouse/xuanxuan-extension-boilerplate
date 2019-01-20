@@ -44,7 +44,7 @@ module.exports = function(env, argv) {
                 },
                 {
                     test: /\.tsx?$/,
-                    use: 'ts-loader',
+                    use: 'awesome-typescript-loader',
                     exclude: /node_modules/
                 }
             ]

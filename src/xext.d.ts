@@ -2908,7 +2908,7 @@ declare namespace Xuanxuan {
          * @param {...any} params 方法参数
          * @return {any} 如果返回所调用的方法返回值
          */
-        callModuleMethod(methodName: string, ...params?: any[]): any;
+        callModuleMethod(methodName: string, ...params: any[]): any;
 
         /**
          * 扩展支持的命令
