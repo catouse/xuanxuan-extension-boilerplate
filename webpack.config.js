@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const pkg = require('./src/package.json');
 
 module.exports = function(env, argv) {
-    const isDevelopment = env.production;
+    const isDevelopment = !env.production;
     return {
         mode: env.production ? 'production' : 'development',
 
@@ -22,7 +22,7 @@ module.exports = function(env, argv) {
 
         resolve: {
             // Add '.ts' and '.tsx' as resolvable extensions.
-            extensions: ['.ts', '.tsx', '.js', '.json', '.css'],
+            extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.css'],
 
             modules: [
                 path.join(__dirname, './src'),
@@ -45,6 +45,21 @@ module.exports = function(env, argv) {
                 {
                     test: /\.tsx?$/,
                     use: 'awesome-typescript-loader',
+                    exclude: /node_modules/
+                },
+                {
+                    test: /\.jsx?$/,
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            cacheDirectory: true,
+                            presets: ['@babel/preset-env'],
+                            plugins: [
+                                '@babel/plugin-transform-runtime',
+                                '@babel/plugin-transform-react-jsx'
+                            ]
+                        }
+                    },
                     exclude: /node_modules/
                 }
             ]

@@ -3,7 +3,19 @@ const fs = require('fs-extra');
 const archiver = require('archiver');
 const cpx = require('cpx');
 const {spawn} = require('child_process');
+const program = require('commander');
 const pkg = require('./src/package.json');
+
+// 处理命令行参数
+program
+    .version(pkg.version)
+    .alias('npm run package --')
+    .description(`${pkg.productName || pkg.name}的打包工具`)
+    .option('-s, --skipbuild', '是否忽略构建最终安装包，仅仅生成用于构建所需的配置文件', false)
+    .option('-C, --clean', '存储安装包之前是否清空旧的安装包文件', false)
+    .parse(process.argv);
+
+const {skipbuild, clean} = program;
 
 const createZipFromDir = (file, dir, destDir = false) => {
     return new Promise((resolve, reject) => {
@@ -44,11 +56,19 @@ const cleanDist = () => fs.emptyDir('./dist');
 const createZip = () => createZipFromDir(`./release/${pkg.name}.${pkg.version}.zip`, './dist/');
 
 const createPackage = async () => {
-    await cleanDist();
-    await webpackBuild();
+    if (clean) {
+        await cleanDist();
+    }
+    if (!skipbuild) {
+        await webpackBuild();
+    }
+
     await copyFiles();
-    await fs.ensureDir('./release');
-    await createZip();
+
+    if (!skipbuild) {
+        await fs.ensureDir('./release');
+        await createZip();
+    }
 };
 
 createPackage();
