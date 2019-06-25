@@ -27,7 +27,12 @@ module.exports = function(env, argv) {
             modules: [
                 path.join(__dirname, './src'),
                 'node_modules'
-            ]
+            ],
+
+            alias:{
+                react: 'react.js',
+                "react-dom": 'react-dom.js'
+            }
         },
 
         module: {
